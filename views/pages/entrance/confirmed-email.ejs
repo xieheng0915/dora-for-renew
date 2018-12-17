@@ -1,0 +1,23 @@
+<div id="confirmed-email" v-cloak>
+    <div class="container">
+        <div class="common-container">
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+
+
+              <div class="alert alert-info mx-auto">
+                <i class="fa fa-info-circle fa-1x"></i>
+                  <p><%- __('email-confirmed')  %></p><br/>
+                  <p><%- __('verify-account') %></p><br />
+                  <p><a class="btn btn-outline-info" href="/account"><%- __('to-dashboard') %></a></p>
+                </div>
+
+            </div><!--end col-->
+          </div><!--end row--> 
+
+        </div><!--End-commen-containe-->
+      
+    </div><!--End-container-->
+</div><!--End section-->
+  
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>

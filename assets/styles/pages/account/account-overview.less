@@ -1,0 +1,62 @@
+#account-overview {
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  .my-page-button {
+    width: 150px;
+  }
+
+  .remove-button {
+    color: @brand;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      color: @text-normal;
+    }
+  }
+  //SMY
+  .value-large {
+    font-size: 25px;
+    padding-bottom: 25px;
+  }
+  .btn-xs{
+    font-size: 12px;
+  }
+  .btn-danger:disabled{
+    background-color: hsl(0, 10%, 88%);
+    border-color: rgb(250, 248, 248);
+    color:rgb(133, 130, 130);
+    cursor:not-allowed;
+  }
+   //SMY
+  /*
+  Hide radio button (the round disc)
+  we will use just the label to create pushbutton effect
+*/
+input[type=radio] {
+  display:none; 
+  margin:10px;
+}
+
+/*
+Change the look'n'feel of labels (which are adjacent to radiobuttons).
+Add some margin, padding to label
+*/
+input[type=radio] + label {
+  display:inline-flex;
+  margin:-3px;
+  padding: 10px 15px;
+  background-color: hsl(0, 0%, 99%);
+  border-color: #ddd;
+  cursor:pointer;
+  border:1px solid;
+}
+/*
+Change background color for label next to checked radio button
+to make it look like highlighted button
+*/
+input[type=radio]:checked + label { 
+ background-image: none;
+  background-color:#fa0b0b;
+}
+}

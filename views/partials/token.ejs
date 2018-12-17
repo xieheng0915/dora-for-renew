@@ -1,0 +1,41 @@
+<!-- START ABOUT SECTION -->
+<div class="section about flat-color4"  data-menuanchor="about">
+    <!-- <section class="about-section" id="about"> -->
+    <div class="container">
+        <div class="commen-containe">
+            <div class="row">
+                <div class="col-sm-6 offset-md-1">
+                    <div class="about-section common section-title title hp_block">
+                        <h1 class="text-center"><%= __('token-info') %></h1>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th rowspan="2"><%= __('token-price') %></th>
+                                    <td><%= __('dor-btc') %><br/>(<%= __('min-purchase') %>)</td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('dor-eth') %><br/>(<%= __('min-purchase-eth') %>)</td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="3"><%= __('financing') %></th>
+                                    <td><%= __('token-sale') %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= __('token-issued') %></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!-- end of /.coloumn -->
+                <div class="col-sm-4 mx-auto">
+                    <div class="about-section common section-title title mx-auto">
+                        
+                        <doughnut-chart></doughnut-chart>
+                        <!-- <span class="badge">Chart: Token Supply Distribution</span> -->
+                    </div>
+                </div> 
+            </div><!-- End row -->
+        </div><!-- End commen-containe --> 
+    </div><!-- End container -->
+</div><!-- End section -->

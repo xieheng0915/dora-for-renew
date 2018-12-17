@@ -1,0 +1,44 @@
+<div id="login" v-cloak>
+    <div class="container">
+        <div class="common-container">
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <div class="services-section common section-title title">
+                <h1 class="text-center"><%= __('sign-in') %></h1>
+              </div>
+
+              <div class="login-form-container">
+              <ajax-form action="login" :syncing.sync="syncing" :cloud-error.sync="cloudError" :form-data="formData" :form-rules="formRules" :form-errors.sync="formErrors" @submitted="submittedForm()">
+                <div class="form-group">
+                  <input type="email" class="form-control dark-control" placeholder=<%= __('email-example') %> :class="[formErrors.emailAddress ? 'is-invalid' : '']" v-model.trim="formData.emailAddress" focus-first>
+                  <div class="invalid-feedback" v-if="formErrors.emailAddress"><%= __('login.error.emailaddress') %></div>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control dark-control" :class="[formErrors.password ? 'is-invalid' : '']" v-model.trim="formData.password">
+                  <div class="invalid-feedback" v-if="formErrors.password"><%= __('login.error.password') %></div>
+                </div>
+                <div class="form-group">
+                  <input type="checkbox" id="remember" name="rememberMe" v-model="formData.rememberMe"/>
+                  <label for="remember"><%= __('remember-me') %></label>
+                </div>
+              
+                <p class="text-danger" v-if="cloudError==='badCombo'"><small><%= __('login.error.account') %></small></p>
+
+                <p class="text-danger" v-else-if="cloudError"><small><%- __('error.systemerror') %></small></p>
+                <div class="form-group">
+                  <ajax-button :syncing="syncing" class="btn-dark btn-lg btn-block"><%= __('sign-in') %></ajax-button>
+                </div>
+              </ajax-form>
+              <p class="text-center"><a href="/password/forgot"><%= __('forget-your-password') %> </a></p>
+            </div>
+            
+            </div><!--end col-->
+          </div><!--end row--> 
+
+        </div><!--End-commen-containe-->
+      
+    </div><!--End-container-->
+</div><!--End section-->
+
+
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>

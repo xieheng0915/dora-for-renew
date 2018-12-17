@@ -1,0 +1,167 @@
+<div class="row mb-3">
+  <div class="services-section common section-title title col-md-12">
+    <h1 class="text-center">
+      <%= __('purchase-request') %>
+    </h1>
+  </div>
+  <div class="col-md-10 mx-auto">
+    <ajax-form action="purchaseRequest" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
+      <div class="btn-group btn-group-toggle text-center" data-toggle="buttons">
+        <label @click="selectBTC()" :class="[ formData.currencyToBePaid == 'BTC' ? 'btn btn-secondary active' : 'btn btn-secondary']">
+          <input type="radio" name="currencyToBePaid" v-bind:value="currencyBTC" id="currency_btc" autocomplete="off"> BTC
+        </label>
+        <label @click="selectETH()" :class="[ formData.currencyToBePaid == 'ETH' ? 'btn btn-secondary active' : 'btn btn-secondary']">
+          <input type="radio" name="currencyToBePaid" v-bind:value="currencyETH" id="currency_eth" autocomplete="off"> ETH
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="amount-to-be-paid">
+          <%= __('currency1-label') %>
+            <span> {{ formData.currencyToBePaid }}</span>
+        </label>
+        <input class="form-control dark-control" id="amount-to-be-paid" name="amount-to-be-paid" :class="[formErrors.amountToBePaid ? 'is-invalid' : '']"
+          v-model.trim="formData.amountToBePaid" placeholder="999.99" focus-first>
+        <div class="invalid-feedback" v-if="formErrors.amountToBePaid">
+          <%= __('currency1-required') %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="smc-purchased">
+          <%= __('dora-coin-label') %>
+        </label>
+        <input class="form-control dark-control" id="smc-purchased" name="smc-purchased" :class="[formErrors.smcPurchased ? 'is-invalid' : '']"
+          v-model.trim="formData.smcPurchased" placeholder="999.99">
+        <div class="invalid-feedback" v-if="formErrors.smcPurchased">
+          <%= __('dora-coin-required') %>
+        </div>
+      </div>
+      <p class="text-danger" v-if="cloudError === 'invalidAmountInput'">
+        <small>
+          <%- __('error.invalidAmountInput') %>
+        </small>
+      </p>
+      <p class="text-danger" v-if="cloudError">
+        <small>
+          <%- __('error.systemerror') %>
+        </small>
+      </p>
+
+      <div class="form-group">
+        <ajax-button type="submit" :syncing="syncing" class="btn btn-dark btn-lg btn-block">
+          <%= __('submit') %>
+        </ajax-button>
+      </div>
+    </ajax-form>
+  </div>
+  <!--col-md-10-->
+</div>
+<!--row-->
+
+<div class="row mb-3 position-relative" v-if="itemTotalRow > 0" :syncing.sync="syncing" :handle-parsing="handleParsingForm">
+
+  <div class="services-section common section-title title col-md">
+    <span>
+      There are
+      <b>{{itemTotalRow}}</b>
+      transactions
+    </span>
+  </div>
+
+  <table class="table">
+    <caption>
+      <%= __('table-caption') %>
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">
+          <%= __('status') %>
+        </th>
+        <th scope="col">
+          <%= __('date') %>
+        </th>
+        <th scope="col">
+          <%= __('transaction-id') %>
+        </th>
+        <th scope="col" class="text-right">
+          <%= __('price') %>
+        </th>
+        <th class="text-left" scope="col">
+          <%= __('currency') %>
+        </th>
+        <th class="text-right" scope="col">
+          <%= __('dora-coin-abbr') %>
+        </th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="item in itemDatas">
+        <td scope="row">
+            {{ item.resultStatus < 0 ? "<%= __('cancelled') %>" :
+            item.resultStatus > 0 ? "<%= __('success') %>" :
+            "<%= __('pending') %>" }}
+        </td>
+        <td>{{ item.createdAtModified }}</td>
+        <td>{{ item.resultTxnId }}</td>
+        <td class="text-right">{{ item.resultAmount }}</td>
+        <td class="text-left">{{ item.currency1 }}</td>
+        <td class="text-right">{{ item.smcAmount }}</td>
+        <td>
+          <a href="#">
+            <img @click="clickOpenPaymentModalIcon(item, $event)" src="/images/ic_replay_black_24px.svg"></img>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <bPagination class="bg-dark mx-auto" id="bPagination" size="md" :total-rows=itemTotalRow @change="clickPageNumber($event)"  v-model="currentPage" :per-page=pagePerCount>
+  </bPagination> -->
+
+  <b-pagination class="bg-dark mx-auto" size="md" @change="clickPageNumber($event)" v-model="currentPage" :per-page=pagePerCount
+    :total-rows=itemTotalRow>
+  </b-pagination>
+
+
+</div>
+<!--row-->
+
+<modal class="modal fade" v-if="paymentModalVisible" @close="closePaymentModal()" v-cloak>
+  <div class="modal-header">
+    <h2 class="modal-title">
+      <%= __('payment') %>
+    </h2>
+    <!-- <p>At your leisure, please peruse this excerpt from a whale of a tale.</p> -->
+    <hr/>
+    <button type="button" class="modal-close-button" data-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <h4 style="margin-bottom: 0px;">
+      <%= __('transaction-id') %>
+    </h4>
+    <p id="transaction_id" style="margin-top: 0px;">{{ transactionId }}</p>
+    <h4 style="margin-bottom: 0px;">
+      <%= __('amount') %>
+    </h4>
+    <p id="amount" style="margin-top: 0px;">{{ amount }}</p>
+    <h4 style="margin-bottom: 0px;">
+      <%= __('address') %>
+    </h4>
+    <p id="address" style="margin-top: 0px;">{{ address }}</p>
+    <h4 style="margin-bottom: 0px;">
+      <%= __('status-url') %>
+    </h4>
+    <p id="status_url" class="text-justify" style="margin-top: 0px;">{{ statusUrl }}</p>
+    <h4 style="margin-bottom: 0px;">
+      <%= __('qr-code') %>
+    </h4>
+    <img style="margin-top: 0px;" :src="qrcodeUrl" />
+  </div>
+  <div class="modal-footer flex-row-reverse justify-content-between">
+    <button type="button" data-dismiss="modal" class="btn btn-info">
+      <%= __('close') %>
+    </button>
+    <button type="button" data-dismiss="modal" class="btn btn-outline-info">
+      <%= __('cancel') %>
+    </button>
+  </div>
+</modal>

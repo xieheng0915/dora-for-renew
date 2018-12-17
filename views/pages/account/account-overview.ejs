@@ -1,0 +1,268 @@
+<div id="account-overview" v-cloak>
+  <div class="container">
+    <div class="common-container">
+      <div class="row">
+        <div class="col-md-12 text-center mb-5">
+          <span class="float-sm-right">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label @click="checkMyPage()" :class="[ myPageEnabled ? 'btn btn-danger active' : 'btn btn-secondary']">
+                <input type="radio" name="choice" v-bind:value="currencyBTC" id="my_page" autocomplete="off">
+                <%= __('my-page') %>
+              </label>
+              <label @click="checkBuyToken()" :class="[ buyTokenEnabled ? 'btn btn-danger active' : 'btn btn-secondary']">
+                <input type="radio" name="choice" v-bind:value="currencyBTC" id="buy_token" autocomplete="off">
+                <%= __('buy-token') %>
+              </label>
+              <label @click="checkEdit()" :class="[ editEnabled ? 'btn btn-danger active' : 'btn btn-secondary']">
+                <input type="radio" name="choice" v-bind:value="currencyBTC" id="edit" autocomplete="off">
+                <%= __('edit') %>
+              </label>
+            </div>
+          </span>
+        </div>
+        <!--end col-->
+      </div>
+      <!--end row-->
+    </div>
+    <!--End-commen-containe-->
+
+    <!-- My Page -->
+    <div class="container" v-if="myPageEnabled">
+
+      <div class="services-section common section-title title">
+        <h1 class="text-center">{{me.fullName}}</h1>
+      </div>
+
+      <div class="row pt-2">
+        <div class="col-lg-4 mb-4">
+          <div class="card">
+            <h4 class="card-header">
+              <%= __('profile') %>
+            </h4>
+            <div class="card-body">
+              <div>
+                <label>
+                  <%= __('nick-name') %>
+                </label>
+                <div class="value-large"> {{me.fullName}} </div>
+              </div>
+
+              <div>
+                <label>
+                  <%= __('email') %>
+                </label>
+                <div class="value-large"> {{me.emailAddress}}</div>
+              </div>
+              <div>
+                <label>
+                  <%= __('wallet-address') %>
+                    <div>
+                      <h5 class="bg-info">{{me.walletAddress ? me.walletAddress : '-'}}</h5>
+                    </div>
+                    <small>
+                      <%= __('wallet-address-message') %>
+                    </small>
+                </label>
+              </div>
+              <div>
+                <label>
+                  <%= __('referral-email') %>
+                </label>
+                <div>
+                  <h5 class="bg-info">{{me.referralEmailAddress ? me.referralEmailAddress : '-'}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="card">
+            <h4 class="card-header">
+              <%= __('token') %>
+            </h4>
+            <div class="card-body">
+              <div>
+                <label>
+                  <%= __('token-purchase') %>
+                </label>
+                <span class="float-sm-right">
+                  <button type="button" class="btn btn-danger btn-xs" v-on:click="checkBuyToken">
+                    <%= __('buy-token') %>
+                  </button>
+                </span>
+                <!--div class="value-large" v-if="walletData.wallet.length > 0">{{walletData.wallet[0].tokenPurchased }}DOR</div-->
+                <div class="value-large">{{walletData.wallet.length > 0 ? walletData.wallet[0].tokenPurchased : '0'}}
+                  <%= __('DOR') %>
+                </div>
+              </div>
+
+              <div>
+                <label>
+                  <%= __('token-to-be-transfer') %>
+                </label>
+                <!-- <span class="float-sm-right">
+                  <button type="button" class="btn btn-danger btn-xs" disabled>Withdrawal</button>
+                </span> -->
+                <!--div class="value-large" v-if="walletData.wallet.length > 0">{{walletData.wallet[0].tokenToBeTransferred }}DOR</div-->
+                <div class="value-large">{{walletData.wallet.length > 0 ? walletData.wallet[0].tokenToBeTransferred : '0'}}
+                  <%= __('DOR') %>
+                </div>
+              </div>
+              <div>
+                <label>
+                  <%= __('token-in-user-wallet') %>
+                </label>
+                <!--div class="value-large" v-if="walletData.wallet.length > 0">{{walletData.wallet[0].tokenInUserWallet }}DOR</div-->
+                <div class="value-large">{{walletData.wallet.length > 0 ? walletData.wallet[0].tokenInUserWallet : '0'}}
+                  <%= __('DOR') %>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <!-- Categories Widget -->
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td colspan="2">
+                      <%= __('token-price') %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="w-50">
+                      <%= __('dor-btc') %>(
+                        <%= __('min-purchase') %>)</td>
+                    <td class="w-50">
+                      <%= __('dor-eth') %>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--col-sm-12-->
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="card">
+            <h4 class="card-header">
+              <%= __('bonus') %>
+            </h4>
+            <div class="card-body">
+              <div>
+                <label>
+                  <%= __('personal-bonus') %>
+                </label>
+                <!--div class="value-large" v-if="walletData.wallet.length > 0">{{walletData.wallet[0].bonusPreSale }}DOR</div-->
+                <div class="value-large">
+                  <div class="value-large">{{walletData.wallet.length > 0 ? walletData.wallet[0].bonusPreSale : '0'}}
+                    <%= __('DOR') %>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label>
+                  <%= __('referral-bobus') %>
+                </label>
+                <!--div class="value-large" v-if="walletData.wallet.length > 0">{{walletData.wallet[0].bonusReferral }}DOR</div-->
+                <div class="value-large">{{walletData.wallet.length > 0 ? walletData.wallet[0].bonusReferral : '0'}}
+                  <%= __('DOR') %>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--card-->
+        </div>
+        <!--mb-4-->
+      </div>
+    </div>
+    <!--container-->
+    <!-- End My page -->
+
+    <!-- Buy Token -->
+    <div class="container" v-if="buyTokenEnabled">
+      <%- include ../purchase/purchase-request %>
+    </div>
+    <!--End Buy Token -->
+
+    <!-- Edit Profile info -->
+    <div class="container" v-if="editEnabled">
+
+      <div class="services-section common section-title title">
+        <h1 class="text-center">
+          <%= __('my-account') %>
+        </h1>
+      </div>
+
+      <div class="row mb-3 offset-md-1">
+        <div class="col-sm-5">
+          <h4>
+            <%= __('personal-info')%>
+          </h4>
+        </div>
+        <div class="col-sm-5">
+          <span class="float-sm-right">
+            <a class="btn btn-sm btn-outline-info my-page-button" href="/account/profile">
+              <%= __('edit-profile') %>
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <div class="row mb-3 offset-md-1">
+        <div class="col-3">
+          <%= __('nick-name') %>
+        </div>
+        <div class="col">
+          <strong>{{me.fullName}}</strong>
+        </div>
+      </div>
+
+      <div class="row mb-3 offset-md-1">
+        <div class="col-3">
+          <%= __('email') %>
+        </div>
+        <div class="col">
+          <strong :class="[me.emailStatus === 'unconfirmed' || me.emailStatus === 'changeRequested' ? 'text-muted' : '']">{{me.emailChangeCandidate ? me.emailChangeCandidate : me.emailAddress}}</strong>
+          <span v-if="me.emailStatus === 'unconfirmed' || me.emailStatus === 'changeRequested'" class="badge badge-pill badge-warning">Unverified</span>
+        </div>
+      </div>
+
+      <hr/>
+      <div class="row mb-3 offset-md-1">
+        <div class="col-sm-5">
+          <h4>
+            <%= __('password') %>
+          </h4>
+        </div>
+        <div class="col-sm-5">
+          <span class="float-sm-right">
+            <a class="btn btn-sm btn-outline-info my-page-button" href="/account/password">
+              <%= __('change-password') %>
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <div class="row mb-3 offset-md-1">
+        <div class="col-3">
+          <%= __('password') %>
+        </div>
+        <div class="col">
+          <strong>••••••••••</strong>
+        </div>
+      </div>
+    </div>
+    <!-- End Edit Profile info -->
+
+
+
+
+  </div>
+  <!--end-container-->
+</div>
+<!--End section-->
+
+
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>

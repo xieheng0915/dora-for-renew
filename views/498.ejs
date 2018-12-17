@@ -1,0 +1,20 @@
+<div id="498" v-cloak>
+    <div class="container">
+      <div class="common-container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            
+            <div class="alert alert-warning col-md-8 mx-auto">
+                <i class="fa fa-exclamation-circle fa-1x"></i>
+                <p>
+                    <%- __('sorry-link-used') %><br />
+                    <%- __('unexpected-error') %><br /><%- __('request-new-password-reset') %>
+                  <br /><br /><a class="btn btn-lg btn-outline-dark" href="/password/forgot"><%- __('reset-password') %></a>
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>

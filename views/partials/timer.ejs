@@ -1,0 +1,55 @@
+<!-- timer-->
+<div class="section flat-color" data-menuanchor="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="home-title section-title">
+          <!-- <p class="text-center demo">creative coming soon template</p> -->
+          
+          <% if (typeof period != 'undefined') { %>
+            <h1 class="cd-headline clip is-full-width">
+              <span class="cd-words-wrapper">
+                  <b class="is-visible"><%= __(__('timer%s-title', period )) %></b>
+                  <b><%= __(__('timer%s-timing', period )) %></b>
+              </span>
+          </h1>
+
+          <div class="dark-time dark-circle animated bounceIn" data-date="<%- timeValue %>" data-timer="900" style="width:75%; margin: 0 auto;" ></div>
+          <% } else{ %>            
+            <h2 class = "text-center"><%= __('token-sale-ended') %></h2>
+            <h4 class = "text-center py-5">
+            <%- __('token-sale-ended-info') %>
+            </h4>
+          <% } %>
+
+          <div class="scribe"> 
+              <a href="/pdfs/<%= __('whitepaper-pdf') %>.pdf" class="col-sm-3 btn btn-lg btn-subscribe dark-btn mx-2 my-2" role="button"><%= __('common.menu.white-paper') %></a>
+              <a href="/pdfs/<%= __('howtobuy-pdf') %>.pdf" class="col-sm-3 btn btn-lg btn-subscribe dark-btn mx-2 my-2" role="button"><%= __('common.menu.how-to-buy') %></a>
+              <a href="/signup" class="col-sm-3 btn btn-lg btn-subscribe dark-btn mx-2 my-2" role="button"><%= __('common.menu.signup') %></a>
+          </div>
+        </div>
+      </div><!--End-col-->
+    </div><!--End-row-->
+    <% if (typeof period != 'undefined' && period != '0') { %>
+    <div class="row">
+        <div class="col-md-12 text-center pt-1 saleinfo">
+          <div class="about-chart">
+            <div class="col-sm-2 metro">
+                <h1><span class="labelname">Token Sold</span> <span>{{tokenSold}}</span></h1>
+            </div>
+
+            <div class="metro">
+                <h1><span class="labelname">ETH Funded</span> <span>{{ethFunded}}</span></h1>
+            </div>
+
+            <div class="metro">
+                <h1><span class="labelname">BTC Funded</span> <span>{{bthFunded}}</span></h1>
+            </div>
+
+          </div><!-- End about-chart -->
+        </div><!--End col -->
+      </div><!-- End row -->
+      <% } %>
+
+  </div><!--End-container-->
+</div><!-- End section -->

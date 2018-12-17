@@ -1,0 +1,48 @@
+<!--nav-->
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand logo dark-logo" href="/#home">
+        <img src="/images/dor_coin_logo_1.png" width="120" alt="DORA Coin" id="desktop-logo" />
+        <img src="/images/dor_coin_logo.png" width="120" alt="DORA Coin" id="mobile-logo" />
+      </a>
+      <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="nav navbar-nav dark-nav" id="menu">
+      <!-- <ul class="nav navbar-nav" id="menu"> -->
+        <!-- <li class="active nav-item" data-menuanchor="home"><a href="/#home" class="active nav-link"><%= __('common.menu.home') %></a></li> -->
+        <% if(me) { %>   
+          <% if(me.emailStatus == 'confirmed') { %> 
+          <li class="nav-item"><a href="/account" class="nav-link"><%= __('common.menu.my-page') %></a></li>
+          <li class="nav-item"><a href="/logout" class="nav-link"><%= __('common.menu.sign-out') %></a></li>
+          <% } %>
+        <% } else { %>
+          <li class="nav-item"><a href="/signup" class="nav-link"><%= __('common.menu.signup') %></a></li>
+          <li class="nav-item"><a href="/login" class="nav-link"><%= __('common.menu.login') %></a></li>
+        <% } %>
+        <!-- <li class="nav-item"><a href="/pdfs/<%= __('whitepaper-pdf') %>.pdf" class="nav-link"><%= __('common.menu.white-paper') %></a></li> -->
+        <li class="nav-item"><a href="/pdfs/<%= __('whitepaper-pdf') %>.pdf" class="nav-link"><%= __('common.menu.white-paper') %></a></li>
+        <li class="nav-item"><a href="/pdfs/<%= __('howtobuy-pdf') %>.pdf" class="nav-link"><%= __('common.menu.how-to-buy') %></a></li>
+        <li class="nav-item"><a href="/faq" class="nav-link">FAQ</a></li>
+        <li class="nav-item" data-menuanchor="contact"><a href="/#contact" class="nav-link"><%= __('common.menu.contact') %></a></li>
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Language
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/en">English</a>
+            <!-- <a class="dropdown-item" href="/ja">日本語</a> -->
+            <a class="dropdown-item" href="/zh">繁體中文</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+</div>
+</nav>

@@ -1,0 +1,109 @@
+<div id="signup" v-cloak>
+    <div class="container">
+        <div class="common-container" v-if="!cloudSuccess">
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+
+              <div class="services-section common section-title title">
+                <h1 class="text-center"><%= __('create-an-account') %></h1>
+                <!-- <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat.</p> -->
+              </div>
+              <div class="signup-form">
+                  <p class="text-center"><%= __('you-already-have-an-account') %> <a href="/login"><%=__('common.menu.login')%></a></p>
+                  <hr/>
+                  <ajax-form action="signup" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
+                    <div class="row">
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                              <label for="nick-name"><%= __('nick-name') %></label>
+                              <input class="form-control dark-control" id="nick-name" type="text"  :class="[formErrors.fullName ? 'is-invalid' : '']" v-model.trim="formData.fullName" placeholder=<%= __('nick-name') %> focus-first>
+                              <div class="invalid-feedback" v-if="formErrors.fullName"><%= __('enter-your-full-name') %></div>
+                            </div>
+                      </div><!--col-sm-6-->
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="email-address"><%= __('email') %> </label>
+                            <input class="form-control dark-control" id="email-address" type="email"  :class="[formErrors.emailAddress ? 'is-invalid' : '']" v-model.trim="formData.emailAddress" placeholder=<%= __('email-example') %>>
+                            <div class="invalid-feedback" v-if="formErrors.emailAddress"><%= __('enter-a-valid-email-address') %></div>
+                          </div>
+                      </div><!--col-sm-6-->
+                    </div><!--row-->
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="password"><%= __('password') %></label>
+                            <input class="form-control dark-control" id="password" type="password"  :class="[formErrors.password ? 'is-invalid' : '']" v-model.trim="formData.password" placeholder="••••••••">
+                            <div class="invalid-feedback" v-if="formErrors.password"><%=__('enter-password') %></div>
+                          </div>
+                      </div><!--col-sm-6-->
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="confirm-password"><%= __('confirm-password') %></label>
+                            <input class="form-control dark-control" id="confirm-password" type="password"  :class="[formErrors.confirmPassword ? 'is-invalid' : '']" v-model.trim="formData.confirmPassword" placeholder="••••••••">
+                            <div class="invalid-feedback" v-if="formErrors.confirmPassword"><%=__('password-do-not-match') %></div>
+                          </div>                            
+                      </div><!--col-sm-6-->
+                    </div><!--row-->
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                          <div class="form-group">
+                            <label for="referral-email"><%= __('referral-email') %></label>
+                            <input class="form-control dark-control" id="referral-email" type="email"  :class="[formErrors.referralEmailAddress ? 'is-invalid' : '']" v-model.trim="formData.referralEmailAddress" >
+                          </div>
+                      </div><!--col-sm-12-->
+                    </div><!--row-->  
+                    
+                    <div class="row">
+                      <div class="col-sm-12">
+                          <div class="form-group">
+                            <label for="terms-agreement" class="form-check-label" :class="[formErrors.agreed ? 'text-danger' : '']">
+                              <input class="form-check-input" id="terms-agreement" type="checkbox" v-model="formData.agreed"> <%- __('agree-term-service') %>
+                            </label>
+                          </div>                                          
+                      </div><!--col-sm-12-->
+                    </div><!--row--> 
+
+                                       
+                    <p class="text-danger" v-if="cloudError==='emailAlreadyInUse'"><small><%= __('forget-password-recover') %>  <a href="password/forgot"><%= __('here') %></a>.</small></p>
+                    <p class="text-danger" v-else-if="cloudError"><%- __('error.systemerror') %></p>
+                    <div class="form-group">
+                      <ajax-button type="submit" :syncing="syncing" class="btn-dark btn-lg btn-block"><%= __('create-an-account') %></ajax-button>
+                    </div>
+                  </ajax-form>
+                  <p class="text-center"><%= __('have-account') %> <a href="/login"><%= __('signin') %></a></p>
+                </div>
+
+            </div><!--end col-->
+          </div><!--end row--> 
+
+        </div><!--End-commen-containe-->
+
+        <!-- <div class="common-container" v-if="cloudSuccess">
+          <h1 class="text-center"><%= __('check-your-email') %></h1>
+          <div class="success-message">
+            <hr/>
+            <p><%= __('account-ready') %><strong>{{formData.emailAddress}}</strong>.</p>
+            <p><%= __('signin-successful') %></p>
+            <p><a class="btn btn-outline-info" href="/"><%= __('go-to-dashboard') %></a></p>
+          </div>
+        </div> -->
+
+        <div class="common-container" v-if="cloudSuccess">
+            <h1 class="text-center"><%= __('thanks-for-register') %></h1>
+            
+            <div class="alert alert-info col-md-8 mx-auto">
+              <i class="fa fa-info-circle fa-1x"></i>
+              <p><%- __('not-complete-registration') %></p>
+            </div>
+  
+          </div>
+
+
+
+
+    </div><!--End-container-->
+</div><!--End section-->
+
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
