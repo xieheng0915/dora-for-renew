@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="22px" viewBox="0 0 30 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_menu_light@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="定稿" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.触屏首页" transform="translate(-330.000000, -19.000000)" fill="#FFFFFF">
+            <g id="导航">
+                <g id="icon_menu_light" transform="translate(330.000000, 19.000000)">
+                    <g id="Combined-Shape">
+                        <path d="M6.49350649,17.1428571 L30,17.1428571 L30,21.4285714 L6.49350649,21.4285714 L6.49350649,17.1428571 Z M6.49350649,8.7012987 L30,8.7012987 L30,12.987013 L6.49350649,12.987013 L6.49350649,8.7012987 Z M6.49350649,0 L30,0 L30,4.28571429 L6.49350649,4.28571429 L6.49350649,0 Z M0,17.2727273 L4.28571429,17.2727273 L4.28571429,21.5584416 L0,21.5584416 L0,17.2727273 Z M0,8.7012987 L4.28571429,8.7012987 L4.28571429,12.987013 L0,12.987013 L0,8.7012987 Z M0,0 L4.28571429,0 L4.28571429,4.28571429 L0,4.28571429 L0,0 Z" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1043px" height="357px" viewBox="0 0 1043 357" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>table_ico date_Cn@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.首页" transform="translate(-200.000000, -4799.000000)">
+            <g id="6.ICO-date" transform="translate(200.000000, 4680.000000)">
+                <g id="table_ico-date_Cn" transform="translate(0.000000, 115.000000)">
+                    <g id="Group-17" transform="translate(273.000000, 0.000000)">
+                        <rect id="Rectangle" fill="#46C7AB" x="5" y="37" width="204" height="24"></rect>
+                        <rect id="Rectangle" fill="#46C7AB" x="5" y="65" width="204" height="1"></rect>
+                        <text id="第二階段" font-family="PingFangSC-Semibold, PingFang SC" font-size="18" font-weight="500" letter-spacing="0.5478262" fill="#3B2921">
+                            <tspan x="70" y="19">第二階段</tspan>
+                        </text>
+                        <text id="15%-獎金" font-family="PingFangSC-Semibold, PingFang SC" font-size="18" font-weight="500" letter-spacing="0.547826171" fill="#FFFFFF">
+                            <tspan x="66" y="56">15% 獎金</tspan>
+                        </text>
+                        <text id="Aug-31,-2018-14:00:0" font-family="PoppinsLatin-Regular, Poppins Latin" font-size="16" font-weight="normal" line-spacing="24" letter-spacing="0.4869566" fill="#9E9896">
+                            <tspan x="0" y="95">Aug 31, 2018 14:00:00 (JST)</tspan>
+                        </text>
+                    </g>
+                    <g id="Group-17" transform="translate(552.000000, 259.000000)">
+                        <rect id="Rectangle" fill="#3B2921" x="5" y="37" width="204" height="24"></rect>
+                        <rect id="Rectangle" fill="#3B2921" x="5" y="65" width="204" height="1"></rect>
+                        <text id="第三階段" font-family="PingFangSC-Semibold, PingFang SC" font-size="18" font-weight="500" letter-spacing="0.5478262" fill="#3B2921">
+                            <tspan x="70" y="19">第三階段</tspan>
+                        </text>
+                        <text id="10%-獎金" font-family="PingFangSC-Semibold, PingFang SC" font-size="18" font-weight="500" letter-spacing="0.547826171" fill="#FFFFFF">
+                            <tspan x="66" y="56">10% 獎金</tspan>
+                        </text>
+                        <text id="Sep-30,-2018-14:00:0" font-family="PoppinsLatin-Regular, Poppins Latin" font-size="16" font-weight="normal" line-spacing="24" letter-spacing="0.4869566" fill="#9E9896">
+                            <tspan x="0" y="95">Sep 30, 2018 14:00:00 (JST)</tspan>
+                        </text>
+                    </g>
+                    <g id="Group-17" transform="translate(831.000000, 0.000000)">
+                        <rect id="Rectangle" fill="#084E7F" x="4" y="37" width="204" height="24"></rect>
+                        <rect id="Rectangle" fill="#084E7F" x="4" y="65" width="204" height="1"></rect>
+                        <text id="第四階段" font-family="PingFangSC-Semibold, PingFang SC" font-size="18" font-weight="500" letter-spacing="0.5478262" fill="#3B2921">
+                            <tspan x="69" y="19">第四階段</tspan>
+                        </text>
+                        <text id="No-Bonus" font-family="PoppinsLatin-Bold, Poppins Latin" font-size="18" font-weight="bold" letter-spacing="0.5478262" fill="#FFFFFF">
+                            <tspan x="56" y="56">NO BONUS</tspan>
+                        </text>
+                        <text id="Oct-31,-2018-14:00:0" font-family="PoppinsLatin-Regular, Poppins Latin" font-size="16" font-weight="normal" line-spacing="24" letter-spacing="0.4869566" fill="#9E9896">
+                            <tspan x="0" y="95">Oct 31, 2018 14:00:00 (JST)</tspan>
+                        </text>
+                    </g>
+                    <g id="1" transform="translate(61.000000, 141.000000)">
+                        <circle id="Oval" fill="#F9F6F5" cx="52" cy="44" r="34"></circle>
+                        <circle id="Oval" fill="#E6603C" cx="34" cy="34" r="34"></circle>
+                        <text font-family="PoppinsLatin-Medium, Poppins Latin" font-size="30" font-weight="400" letter-spacing="0.9130436" fill="#FFFFFF">
+                            <tspan x="28" y="45">1</tspan>
+                        </text>
+                    </g>
+                    <g id="2" transform="translate(340.000000, 141.000000)">
+                        <circle id="Oval" fill="#EDF8F6" cx="53" cy="44" r="34"></circle>
+                        <circle id="Oval" fill="#46C7AB" cx="34" cy="34" r="34"></circle>
+                        <text font-family="PoppinsLatin-Medium, Poppins Latin" font-size="30" font-weight="400" letter-spacing="0.9130436" fill="#FFFFFF">
+                            <tspan x="25" y="45">2</tspan>
+                        </text>
+                    </g>
+                    <g id="3" transform="translate(613.000000, 141.000000)">
+                        <circle id="Oval" fill="#F6F5E6" cx="52" cy="44" r="34"></circle>
+                        <circle id="Oval" fill="#3B2921" cx="34" cy="34" r="34"></circle>
+                        <text font-family="PoppinsLatin-Medium, Poppins Latin" font-size="30" font-weight="400" letter-spacing="0.9130436" fill="#FFFFFF">
+                            <tspan x="25" y="45">3</tspan>
+                        </text>
+                    </g>
+                    <g id="4" transform="translate(885.000000, 141.000000)">
+                        <g id="Group-13">
+                            <circle id="Oval" fill="#F1F5F8" cx="52" cy="44" r="34"></circle>
+                            <circle id="Oval" fill="#084E7F" cx="34" cy="34" r="34"></circle>
+                        </g>
+                        <text font-family="PoppinsLatin-Medium, Poppins Latin" font-size="30" font-weight="400" letter-spacing="0.9130436" fill="#FFFFFF">
+                            <tspan x="24" y="45">4</tspan>
+                        </text>
+                    </g>
+                    <polygon id="Rectangle" fill="#E6603C" points="164 175 330 175 330 178 164 178"></polygon>
+                    <polygon id="Rectangle" fill="#46C7AB" points="437 175 603 175 603 178 437 178"></polygon>
+                    <polygon id="Rectangle" fill="#3B2921" points="709 175 875 175 875 178 709 178"></polygon>
+                    <g id="Group-17" transform="translate(0.000000, 259.000000)">
+                        <rect id="Rectangle" fill="#E6603C" x="0" y="37" width="204" height="24"></rect>
+                        <rect id="Rectangle" fill="#E6603C" x="0" y="65" width="204" height="1"></rect>
+                        <text id="第一階段" font-family="PingFangSC-Semibold, PingFang SC" font-size="18" font-weight="500" letter-spacing="0.547826171" fill="#3B2921">
+                            <tspan x="65" y="19">第一階段</tspan>
+                        </text>
+                        <text id="30%-獎金" font-family="PingFangSC-Semibold, PingFang SC" font-size="18" font-weight="500" letter-spacing="0.547826171" fill="#FFFFFF">
+                            <tspan x="60" y="56">30% 獎金</tspan>
+                        </text>
+                        <text id="Aug-1,-2018-14:00:00" font-family="PoppinsLatin-Regular, Poppins Latin" font-size="16" font-weight="normal" line-spacing="24" letter-spacing="0.4869566" fill="#9E9896">
+                            <tspan x="0" y="95">Aug 1, 2018 14:00:00 (JST)</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

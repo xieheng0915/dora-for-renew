@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="637px" viewBox="0 0 375 637" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>bg_contact us@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="定稿" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.触屏首页" transform="translate(0.000000, -4914.000000)">
+            <g id="7.contact-us" transform="translate(0.000000, 4914.000000)">
+                <g id="bg_contact-us">
+                    <polygon id="Rectangle" fill="#084E7F" points="45 0 375 0 375 608 45 608"></polygon>
+                    <polygon id="Rectangle" fill="#46C7AB" points="0 135 348 135 348 638 0 638"></polygon>
+                    <polygon id="Rectangle" fill="#FDFCF2" points="15 32 360 32 360 595 15 595"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
